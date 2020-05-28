@@ -70,7 +70,7 @@ def query_stock(symbol):
               'temp_max': 23,
               'temp_min': 22},
      'name': symbol,
-     'sys': {'country': 'CA',
+     'sys': {'country': rank,
              'id': 890,
              'sunrise': 1590397162,
              'sunset': 1590452679,
