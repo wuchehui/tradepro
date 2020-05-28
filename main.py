@@ -9,19 +9,10 @@ webapp = Flask(__name__) #create a flask webapp
 
 @webapp.route("/") #"GET / HTTP/1.1"
 def index():
-    return render_template(
-        'weather.html',
-        data=[{'name':'AMD'}, {'name':'BA'}, {'name':'CVX'},
-        {'name':'DIS'}, {'name':'EBAY'}, {'name':'FB'},
-        {'name':'GILD'}, {'name':'HD'}, {'name':'INTC'},
-        {'name':'JPM'}])
-
-@webapp.route("/result", methods=['GET', 'POST'])
-def result():
     data = []
     error = None
-    select = request.form.get('comp_select')
-    resp = query_stock(select)
+    symbol = 'AMD'
+    resp = query_stock(symbol)
     pp(resp)
     if resp:
        data.append(resp)
